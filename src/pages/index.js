@@ -1,11 +1,32 @@
-import * as React from "react"
+import * as React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 function IndexPage() {
+  const data = useStaticQuery(graphql`
+    query getSiteTitle {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  const meta = data?.site?.siteMetadata ?? {};
+
   return (
-    <main>
-      <h1>Hello FEM</h1>
-    </main>
+    <>
+    <header>
+      <Link to="/">{meta.title}</Link>
+    </header>
+      <main>
+        <h1>Hello FEM</h1>
+        <Link to="/about">About</Link>
+      </main>
+    </>
   );
 }
 
 export default IndexPage;
+
+
