@@ -6,5 +6,5 @@ module.exports = {
     image:
       'https://res.cloudinary.com/jlengstorf/image/upload/v1628127675/frontend-masters/gatsby-intro/share-image.jpg',
   },
-  plugins: [],
+  plugins: ['gatsby-plugin-react-helmet'],
 };
