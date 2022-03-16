@@ -51,6 +51,14 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+
     // More config down here...
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'vnkupgyb',
+        dataset: 'production',
+      },
+    },
   ],
 };
